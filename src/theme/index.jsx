@@ -5,7 +5,6 @@ const theme = {
   ...ColorScheme,
 }
 
-
 // Create a context
 const ThemeContext = createContext(theme);
 
