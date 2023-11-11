@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import { createContext, useContext } from "react";
 
 // Define the color scheme based on the website's palette
 const ColorScheme = {
@@ -38,4 +38,4 @@ export const ColorSchemeProvider = ({ children }) => (
 );
 
 // Hook to use the color scheme in components
-export const useColor = () => useContext(ColorContext);
+export const useColor = () => useContext(ColorSchemeContext);
