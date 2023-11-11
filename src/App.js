@@ -1,12 +1,12 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { useColor } from './context/useColor';
+import { useTheme } from './theme/index';
 
 const TestPage = () => {
-  const colors = useColor()
+  const theme = useTheme()
   return (
     <>
-      <p style={{ backgroundColor: colors.lightPurple}}>hi there</p>
+      <p style={{ backgroundColor: theme.lightPurple}}>hi there</p>
     </>
   );
 };

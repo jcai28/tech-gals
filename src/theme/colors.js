@@ -1,6 +1,3 @@
-import { createContext, useContext } from "react";
-
-// Define the color scheme based on the website's palette
 const ColorScheme = {
   white: "white",
   background: "#faebe3", // light pink
@@ -27,15 +24,4 @@ const ColorScheme = {
   black: "#2c2c2c", // dark gray
 };
 
-// Create a context
-const ColorSchemeContext = createContext(ColorScheme);
-
-// Context provider component
-export const ColorSchemeProvider = ({ children }) => (
-  <ColorSchemeContext.Provider value={ColorScheme}>
-    {children}
-  </ColorSchemeContext.Provider>
-);
-
-// Hook to use the color scheme in components
-export const useColor = () => useContext(ColorSchemeContext);
+export default ColorScheme;
