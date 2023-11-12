@@ -1,7 +1,7 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
 
-export default function DonorBoard({amount}) {
+export default function DonorBoard({ amount }) {
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -21,13 +21,21 @@ export default function DonorBoard({amount}) {
             backgroundColor: `${hex}`,
           }}
         />
-        <p style={{color: "#787486", fontSize:'16px'}}>{text}</p>
+        <p style={{ color: "#787486", fontSize: "16px" }}>{text}</p>
       </div>
     );
 
     return (
-      <div style={{ display: "flex", justifyContent: "space-between",marginBottom: "2rem" }}>
-        <h1 style={{fontSize: "18px", color: "#25348F", fontWeight: 'bold'}}>Your Year To Date Impacts</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "2rem",
+        }}
+      >
+        <h1 style={{ fontSize: "18px", color: "#25348F", fontWeight: "bold" }}>
+          Your Year To Date Impacts
+        </h1>
         <div style={{ display: "flex", gap: "3rem" }}>
           {line("Achieved", "#00C16A")}
           {line("Milestone", "#E2E8F0")}
@@ -38,18 +46,21 @@ export default function DonorBoard({amount}) {
 
   const Middle = () => {
     const textPosition = {
-      marginLeft: `${amount/1200*100 - 2}%`, // Adjust as needed
-    }; 
+      marginLeft: `${(amount / 1200) * 100 - 2}%`, // Adjust as needed
+    };
     return (
-   
-      <div style={{color: "#64748B"}}>
+      <div style={{ color: "#64748B" }}>
         <div className="text-lg font-bold mt-2 " style={textPosition}>
           {`$${amount}`}
         </div>
-        <ProgressBar amount={amount} total={2000}/>
+        <ProgressBar amount={amount} total={2000} />
         <div class="face-container">
-          <div class="face1"><img src="group.png" alt="girl" /></div>
-          <div class="face2"><img src="group.png" alt="girl"></img> </div>
+          <div class="face1">
+            <img src="group.png" alt="girl" />
+          </div>
+          <div class="face2">
+            <img src="group.png" alt="girl"></img>{" "}
+          </div>
         </div>
         <div
           style={{ display: "flex", gap: "1rem", justifyContent: "flex-end" }}
@@ -77,13 +88,23 @@ export default function DonorBoard({amount}) {
     );
 
     return (
-      <div style={{color: "#64748B"}}>
-        <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
-        <div style={{display: "flex", justifyContent: "space-between", alignItems: 'flex-start'}}>
-          {line(
-            "At $1200, you would have fully supported a girl in the orphanage for an entire year"
-          )}
-          <img src={require('./light.png')} style={{width: "20rem"}}/>
+      <div style={{ color: "#64748B" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            gap: "2rem",
+            marginTop: "1.2rem",
+          }}
+        >
+          <div>
+            <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
+            {line(
+              "At $1200, you would have fully supported a girl in the orphanage for an entire year"
+            )}
+          </div>
+          <img src={require("./light.png")} style={{ width: "15rem" }} />
         </div>
       </div>
     );
