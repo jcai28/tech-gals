@@ -20,7 +20,7 @@ const ArrowSlider = ({ girlsData, curAmount, setAmount }) => {
       >
         <img src='vector.png' alt='<'></img>
       </button>
-      <div className="mx-4">
+      <div >
         <GirlCard girl={girlsData[currentIndex]} curAmount={curAmount} setAmount={setAmount} />
 
       </div>

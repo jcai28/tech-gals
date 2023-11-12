@@ -38,7 +38,7 @@ export default function DonationBar({curAmount, setAmount }) {
   ];
 
   return (
-    <div className='donation-bar'>
+    <div className='donation-bar px-4'>
       <ArrowSlider girlsData={sample_girls} curAmount={curAmount} setAmount={setAmount}/>
       <CustomizedCard curAmount={curAmount} setAmount={setAmount}/>
     </div>
