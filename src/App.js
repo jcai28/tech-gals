@@ -6,7 +6,7 @@ const TestPage = () => {
   const theme = useTheme()
   return (
     <>
-      <p style={{ backgroundColor: theme.lightPurple}}>hi there</p>
+      <p style={{ backgroundColor: theme.lightPurple}} className="text-3xl font-bold underline">hi there</p>
     </>
   );
 };
