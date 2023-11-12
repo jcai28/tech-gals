@@ -1,0 +1,13 @@
+.app {
+  height: 100vh;
+  border: 5px solid black;
+  overflow: scroll;
+  display: flex;
+  gap: 1vw;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
