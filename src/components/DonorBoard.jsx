@@ -1,11 +1,6 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
 import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-
-
-
 
 export default function DonorBoard({ amount }) {
   const [clicked, setClicked] = useState(false);
@@ -76,30 +71,6 @@ export default function DonorBoard({ amount }) {
     );
   };
 
-  const PopUp = () => {
-    return (
-      <div
-        className="modal show"
-        style={{ display: 'block', position: 'initial' }}
-      >
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
-  
-          <Modal.Body>
-            <p>Modal body text goes here.</p>
-          </Modal.Body>
-  
-          <Modal.Footer>
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
-          </Modal.Footer>
-        </Modal.Dialog>
-      </div>
-    );
-  }
-
   const Bottom = () => {
     const line = (text) => (
       <div
@@ -151,7 +122,6 @@ export default function DonorBoard({ amount }) {
               }}
               onClick={() => {
                 setClicked(true);
-                alert("clicked");
               }}
             />
           </div>
@@ -159,6 +129,44 @@ export default function DonorBoard({ amount }) {
       </div>
     );
   };
+
+  const Overlay = () => {
+    return (
+      <div style={{height: "10rem", width: "10rem", backgroundColor: "black", display: "none"}}/>
+    )
+  }
+
+
+const PopupWindow = ({isVisible, setIsVisible}) => {
+    // State to manage the visibility of the pop-up
+    // const [isVisible, setIsVisible] = useState(true);
+
+    // Function to close the pop-up
+    const handleClose = () => {
+        setIsVisible(false);
+    };
+
+    // If the pop-up is not visible, don't render it
+    if (!isVisible) return null;
+
+    return (
+        <div style={{
+            position: 'fixed', // Fixed position
+            top: '50%', // Centered vertically
+            left: '50%', // Centered horizontally
+            transform: 'translate(-50%, -50%)', // Adjust for centering
+            backgroundColor: 'white', // White background
+            padding: '20px', // Some padding
+            zIndex: 1000, // On top of other items
+            borderRadius: '5px', // Rounded corners
+            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' // Shadow for pop-up
+        }}>
+            <h2>Pop-up Title</h2>
+            <p>This is the content of the pop-up.</p>
+            <button onClick={handleClose}>Close</button>
+        </div>
+    );
+};
 
 
   return (
@@ -169,7 +177,7 @@ export default function DonorBoard({ amount }) {
       <Top />
       <Middle />
       <Bottom />
-      <PopUp />
+      <PopupWindow isVisible={clicked} setIsVisible={setClicked}/>
     </div>
   );
 }
