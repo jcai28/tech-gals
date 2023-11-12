@@ -25,7 +25,7 @@ const ArrowSlider = ({ girlsData, curAmount, setAmount }) => {
 
       </div>
       <button
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-2xl px-4 py-2"
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-2xl px-4 py-2" 
         onClick={handleNextClick}
       >
         <img src='vector 2.png' alt='>'></img>

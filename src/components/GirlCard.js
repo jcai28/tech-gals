@@ -33,7 +33,7 @@ const GirlCard = ({ girl, curAmount, setAmount }) => {
         </div>
       </div>
       <div className="mt-4">
-        <button onClick={handleSupportClick} className="text-white mx-6 py-2 rounded-md hover:bg-gray-200 transition-all duration-300" style={{ backgroundColor: "#25348F" }}>
+        <button onClick={handleSupportClick} className="text-white mx-6 py-2 rounded-md hover:bg-gray-200 transition-all duration-300" style={{ backgroundColor: "#25348F", paddingLeft: "10px"}}>
           SUPPORT {girl.type}
         </button>
       </div>
