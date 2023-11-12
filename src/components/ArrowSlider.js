@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GirlCard from './GirlCard'; // Adjust the path based on your project structure
 
-const ArrowSlider = ({ girlsData }) => {
+const ArrowSlider = ({ girlsData, curAmount, setAmount }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -21,8 +21,8 @@ const ArrowSlider = ({ girlsData }) => {
         <img src='vector.png' alt='<'></img>
       </button>
       <div className="mx-4">
-        <GirlCard girl={girlsData[currentIndex]} />
-        
+        <GirlCard girl={girlsData[currentIndex]} curAmount={curAmount} setAmount={setAmount} />
+
       </div>
       <button
         className="absolute top-1/2 right-2 transform -translate-y-1/2 text-2xl px-4 py-2"

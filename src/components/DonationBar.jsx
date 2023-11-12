@@ -2,7 +2,7 @@ import "./DonationBar.css";
 import ArrowSlider from "./ArrowSlider"
 import CustomizedCard from "./CustomizedCard"
 
-export default function DonationBar() {
+export default function DonationBar({curAmount, setAmount }) {
   const sample_girls = [
     {
       name: "Ponnu",
@@ -39,8 +39,8 @@ export default function DonationBar() {
 
   return (
     <div className='donation-bar'>
-      <ArrowSlider girlsData={sample_girls}/>
-      <CustomizedCard/>
+      <ArrowSlider girlsData={sample_girls} curAmount={curAmount} setAmount={setAmount}/>
+      <CustomizedCard curAmount={curAmount} setAmount={setAmount}/>
     </div>
   )
 }

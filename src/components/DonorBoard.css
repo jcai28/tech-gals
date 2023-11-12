@@ -2,3 +2,9 @@
   border: 2px solid pink;
   flex: 1 1;
 }
+.face-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 33%;
+  margin-right: 33%;
+}

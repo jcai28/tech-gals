@@ -1,7 +1,7 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
 
-export default function DonorBoard() {
+export default function DonorBoard({amount}) {
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -37,9 +37,20 @@ export default function DonorBoard() {
   };
 
   const Middle = () => {
+    const textPosition = {
+      marginLeft: `${amount/1200*100 - 2}%`, // Adjust as needed
+    }; 
     return (
+   
       <div style={{color: "#64748B"}}>
-        <ProgressBar percentage={20} />
+        <div className="text-lg font-bold mt-2 " style={textPosition}>
+          {`$${amount}`}
+        </div>
+        <ProgressBar amount={amount} total={1200}/>
+        <div class="face-container">
+          <div class="face1"><img src="group.png" alt="girl" /></div>
+          <div class="face2"><img src="group.png" alt="girl"></img> </div>
+        </div>
         <div
           style={{ display: "flex", gap: "1rem", justifyContent: "flex-end" }}
         ></div>
@@ -70,7 +81,7 @@ export default function DonorBoard() {
         <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
         <div style={{display: "flex", justifyContent: "space-between", alignItems: 'flex-start'}}>
           {line(
-            "At $400, you would have fully supported a girl in the orphanage for an entire year"
+            "At $1200, you would have fully supported a girl in the orphanage for an entire year"
           )}
           <div style={{height: "5rem", width: "20rem", backgroundColor: "grey"}}/>
         </div>

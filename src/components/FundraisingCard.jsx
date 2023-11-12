@@ -2,7 +2,7 @@ import "./FundraisingCard.css";
 import ProgressBar from "./ProgressBar";
 import Form from "react-bootstrap/Form";
 
-export default function FundraisingCard() {
+export default function FundraisingCard({amount}) {
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -59,8 +59,8 @@ export default function FundraisingCard() {
 
     return (
       <div style={{color: "#64748B"}}>
-        <p><span style={{fontWeight: "700", fontSize: "20px"}}>$66,300</span> raised of $221,000* goal </p>
-        <ProgressBar percentage={20} />
+        <p><span style={{fontWeight: "700", fontSize: "20px"}}>${66300+amount}</span> raised of $221,000* goal </p>
+        <ProgressBar amount={amount+66310} total={221000} />
         <div style={{display: "flex", gap: "1rem", justifyContent: "flex-end", marginTop: "1rem"}}>
           <span>Year</span>
           <YearSelect />

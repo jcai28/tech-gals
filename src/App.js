@@ -1,11 +1,14 @@
 import "./App.css";
+import React, { useState } from 'react';
 import DonationBar from "./components/DonationBar";
 import DonorBoard from "./components/DonorBoard";
 import FundraisingCard from "./components/FundraisingCard";
 import NavBar from "./components/NavBar";
 
 function App() {
+  const [amount, setAmount] = useState(1000)
   return (
+    
     <body className="app">
       <NavBar />
       <div style={{paddingTop: "2rem", paddingBottom: "2rem"}}>
@@ -17,10 +20,10 @@ function App() {
         </div>
         <div style={{display: "flex",padding: "1rem",}}>
           <div className="middle">
-            <FundraisingCard />
-            <DonorBoard />
+            <FundraisingCard amount={amount}/>
+            <DonorBoard amount={amount}/>
           </div>
-          <DonationBar />
+          <DonationBar curAmount={amount} setAmount={setAmount}/>
         </div>
       </div>
     </body>

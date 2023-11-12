@@ -1,7 +1,14 @@
 import React from 'react';
 
-const GirlCard = ({ girl }) => {
+const GirlCard = ({ girl, curAmount, setAmount }) => {
   let infoLines = [girl.age, girl.duration, girl.cover];
+  const handleSupportClick = () => {
+    // Subtract 50 from the current amount
+    const updatedAmount = curAmount + girl.price*12;
+
+    // Call the setAmount function passed from the parent with the updated amount
+    setAmount(updatedAmount);
+  };
 
   return (
     <div className="bg-white rounded-lg overflow-hidden p-4 max-w-md" style={{border: "1px solid #C2D1D9", marginBottom: "1rem"}}>
@@ -26,7 +33,7 @@ const GirlCard = ({ girl }) => {
         </div>
       </div>
       <div className="mt-4">
-        <button className="text-white mx-6 py-2 rounded-md hover:bg-gray-200 transition-all duration-300" style={{ backgroundColor: "#25348F" }}>
+        <button onClick={handleSupportClick} className="text-white mx-6 py-2 rounded-md hover:bg-gray-200 transition-all duration-300" style={{ backgroundColor: "#25348F" }}>
           SUPPORT {girl.type}
         </button>
       </div>
