@@ -83,7 +83,7 @@ export default function DonorBoard({amount}) {
           {line(
             "At $1200, you would have fully supported a girl in the orphanage for an entire year"
           )}
-          <div style={{height: "5rem", width: "20rem", backgroundColor: "grey"}}/>
+          <img src={require('./light.png')} style={{width: "20rem"}}/>
         </div>
       </div>
     );
