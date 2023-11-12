@@ -1,0 +1,9 @@
+.money{
+    border-width: 1px;
+    border-radius: 25;
+    border-color:#25348F ;
+}
+.money:hover{
+    background-color: #25348F;
+    color: white;
+}
