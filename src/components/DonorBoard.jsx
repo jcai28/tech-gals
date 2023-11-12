@@ -1,7 +1,14 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
+import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
+
+
 
 export default function DonorBoard({ amount }) {
+  const [clicked, setClicked] = useState(false);
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -69,6 +76,30 @@ export default function DonorBoard({ amount }) {
     );
   };
 
+  const PopUp = () => {
+    return (
+      <div
+        className="modal show"
+        style={{ display: 'block', position: 'initial' }}
+      >
+        <Modal.Dialog>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal title</Modal.Title>
+          </Modal.Header>
+  
+          <Modal.Body>
+            <p>Modal body text goes here.</p>
+          </Modal.Body>
+  
+          <Modal.Footer>
+            <Button variant="secondary">Close</Button>
+            <Button variant="primary">Save changes</Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </div>
+    );
+  }
+
   const Bottom = () => {
     const line = (text) => (
       <div
@@ -104,11 +135,31 @@ export default function DonorBoard({ amount }) {
               "At $1200, you would have fully supported a girl in the orphanage for an entire year"
             )}
           </div>
-          <img src={require("./light.png")} style={{ width: "15rem" }} />
+          <div style={{ position: "relative" }}>
+            <img src={require("./light.png")} style={{ width: "15rem" }} />
+            <button
+              className="share-button"
+              style={{
+                height: "1.8rem",
+                width: "10rem",
+                backgroundColor: "pink",
+                opacity: "0.2",
+                zIndex: 2,
+                position: "absolute",
+                bottom: "12px",
+                left: ".8rem",
+              }}
+              onClick={() => {
+                setClicked(true);
+                alert("clicked");
+              }}
+            />
+          </div>
         </div>
       </div>
     );
   };
+
 
   return (
     <div
@@ -118,6 +169,7 @@ export default function DonorBoard({ amount }) {
       <Top />
       <Middle />
       <Bottom />
+      <PopUp />
     </div>
   );
 }
