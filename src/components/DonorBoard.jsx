@@ -1,9 +1,17 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function DonorBoard({ amount }) {
   const [clicked, setClicked] = useState(false);
+  const [total, setTotal] = useState(1200);
+
+  useEffect(() => {
+    // Check if the amount exceeds the total and update total if necessary
+    if (amount > total) {
+      setTotal(total+400);
+    }
+  }, [amount, total]);
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -48,14 +56,14 @@ export default function DonorBoard({ amount }) {
 
   const Middle = () => {
     const textPosition = {
-      marginLeft: `${(amount / 1200) * 100 - 2}%`, // Adjust as needed
+      marginLeft: `${(amount / total) * 100 - 2}%`, // Adjust as needed
     };
     return (
       <div style={{ color: "#64748B" }}>
         <div className="text-lg font-bold mt-2 " style={textPosition}>
           {`$${amount}`}
         </div>
-        <ProgressBar amount={amount} total={2000} />
+        <ProgressBar amount={amount} total={total} />
         <div class="face-container">
           <div class="face1">
             <img src="group.png" alt="girl" />
@@ -103,7 +111,7 @@ export default function DonorBoard({ amount }) {
           <div>
             <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
             {line(
-              "At $1200, you would have fully supported a girl in the orphanage for an entire year"
+              `At $${total}, you would have fully supported a girl in the orphanage for an entire year`
             )}
           </div>
           <div style={{ position: "relative" }}>
