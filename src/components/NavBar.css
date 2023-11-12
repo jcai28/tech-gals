@@ -1,0 +1,39 @@
+.nav-bar {
+  height: 100%;
+  padding: 2rem;
+  background: #F9F9F9;
+  color: #878787;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-card {
+  height: 161px;
+  width: 219px;
+  background-color: #EFF1FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 6px;
+}
+
+.user-card .profile-holder {
+  height: 76px;
+  width: 76px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.user-card button {
+  color: #2A45FF;
+  background-color: white;
+  height: 33px;
+  width: 183px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+

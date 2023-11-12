@@ -1,0 +1,14 @@
+.app {
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  gap: 1vw;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2rem;
+  padding: .5rem;
+}
