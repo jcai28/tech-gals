@@ -5,13 +5,15 @@ import { useState, useEffect } from "react";
 export default function DonorBoard({ amount }) {
   const [clicked, setClicked] = useState(false);
   const [total, setTotal] = useState(1200);
+  const [num, setNum] = useState(3);
 
   useEffect(() => {
     // Check if the amount exceeds the total and update total if necessary
     if (amount > total) {
       setTotal(total+400);
+      setNum( num+1);
     }
-  }, [amount, total]);
+  }, [amount, total, num]);
   const Top = () => {
     const line = (text, hex) => (
       <div
@@ -111,7 +113,7 @@ export default function DonorBoard({ amount }) {
           <div>
             <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
             {line(
-              `At $${total}, you would have fully supported a girl in the orphanage for an entire year`
+              `At $${total}, you would have fully supported ${num} girl in the orphanage for an entire year`
             )}
           </div>
           <div style={{ position: "relative" }}>
