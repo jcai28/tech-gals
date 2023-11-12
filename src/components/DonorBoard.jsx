@@ -114,7 +114,7 @@ export default function DonorBoard({ amount }) {
                 height: "1.8rem",
                 width: "10rem",
                 backgroundColor: "pink",
-                opacity: "0.2",
+                opacity: "0",
                 zIndex: 2,
                 position: "absolute",
                 bottom: "12px",
@@ -130,40 +130,60 @@ export default function DonorBoard({ amount }) {
     );
   };
 
-
-const PopupWindow = ({isVisible, setIsVisible}) => {
+  const PopupWindow = ({ isVisible, setIsVisible }) => {
     // State to manage the visibility of the pop-up
     // const [isVisible, setIsVisible] = useState(true);
+    const [facebook, setFacebook] = useState(false);
 
     // Function to close the pop-up
     const handleClose = () => {
-        setIsVisible(false);
+      setIsVisible(false);
     };
 
     // If the pop-up is not visible, don't render it
     if (!isVisible) return null;
 
     return (
-        <div style={{
-            position: 'fixed', // Fixed position
-            top: '50%', // Centered vertically
-            left: '50%', // Centered horizontally
-            transform: 'translate(-50%, -50%)', // Adjust for centering
-            backgroundColor: 'white', // White background
-            padding: '20px', // Some padding
-            zIndex: 1000, // On top of other items
-            borderRadius: '5px', // Rounded corners
-            boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' // Shadow for pop-up
-        }}>
-          <div style={{display: "flex", justifyContent: "flex-end"}}>
-
-            <button onClick={handleClose}>Close</button>
-          </div>
-            <img src={require('./share.png')}/>
+      <div
+        style={{
+          position: "fixed", // Fixed position
+          top: "50%", // Centered vertically
+          left: "50%", // Centered horizontally
+          transform: "translate(-50%, -50%)", // Adjust for centering
+          backgroundColor: "white", // White background
+          padding: "20px", // Some padding
+          zIndex: 1000, // On top of other items
+          borderRadius: "5px", // Rounded corners
+          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.5)", // Shadow for pop-up
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <button onClick={handleClose}>Close</button>
         </div>
-    );
-};
+        <div>
+          <button
+            style={{
+              height: "10rem",
+              width: "10rem",
+              backgroundColor: "pink",
+              opacity: 0,
+              position: "absolute",
+              top: "10rem",
+            }}
+            onClick={() => setFacebook(true)}
+          />
+          <div style={{width: "40rem", display: "flex", justifyContent: "center"}}>
 
+          {facebook ? (
+            <img src={require("./facebook.png")} style={{ width: "20rem", paddingTop: "5rem", paddingBottom: "5rem" }} />
+          ) : (
+            <img src={require("./share.png")} />
+          )}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -173,7 +193,7 @@ const PopupWindow = ({isVisible, setIsVisible}) => {
       <Top />
       <Middle />
       <Bottom />
-      <PopupWindow isVisible={clicked} setIsVisible={setClicked}/>
+      <PopupWindow isVisible={clicked} setIsVisible={setClicked} />
     </div>
   );
 }
