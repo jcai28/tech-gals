@@ -39,7 +39,7 @@ export default function NavBar() {
     return (
       <div
         className="divider"
-        style={{ height: 1, width: "100%", backgroundColor: "#C4C4C4"}}
+        style={{ height: 1, width: "100%", backgroundColor: "#C4C4C4" }}
       />
     );
   };
@@ -52,8 +52,16 @@ export default function NavBar() {
           <img src={require("../assets/logo.png")} alt="nalam logo" />
         </div>
         <div style={styles.items}>
-          <div style={styles.item}>
-            <IconPlaceholder />
+          <div style={{ ...styles.item, color: "#25348F" }}>
+            {/* <IconPlaceholder /> */}
+            <div
+              style={{
+                width: "1rem",
+                height: "1rem",
+                border: "2px solid #25348F",
+                borderRadius: "50%",
+              }}
+            />
             <p>Donor Dashboard</p>
           </div>
           <div style={styles.item}>
@@ -86,9 +94,19 @@ export default function NavBar() {
     );
   };
 
+  const UserCard = () => {
+    return (
+      <div className="user-card">
+        <div className="profile-holder" />
+        <button>Donor Help Center</button>
+      </div>
+    );
+  };
+
   return (
     <div className="nav-bar">
       <Top />
+      <UserCard />
     </div>
   );
 }
