@@ -3,9 +3,20 @@ import ProgressBar from "./ProgressBar";
 
 export default function FundraisingCard() {
   const Top = () => {
+    const line = (text, hex) => (
+      <div style={{display: 'flex', alignItems: "center", justifyContent: "center", gap: ".6rem", marginBottom: 5,}}>
+        <div style={{height: ".6rem", width: ".6rem", borderRadius: "50%", backgroundColor: `${hex}`}}/>
+        <p>{text}</p>
+      </div>
+    );
+
     return (
-      <div>
+      <div style={{display: "flex", justifyContent: "space-between"}}>
         <h1>Organization Objectives</h1>
+        <div style={{display: "flex", gap: "3rem"}}>
+          {line("Achieved", "#00C16A")}
+          {line("Target", "#E2E8F0")}
+        </div>
       </div>
     );
   };
