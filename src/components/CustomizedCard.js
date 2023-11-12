@@ -2,7 +2,7 @@ import React from 'react';
 import "./CustomizedCard.css"
 const CustomizedCard = () => {
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md p-6 max-w-xs mx-auto">
+    <div className="bg-white rounded-lg overflow-hidden p-6 max-w-xs mx-auto" style={{border: "1px solid #C2D1D9"}}>
       <div className="text-center m-2">
         <h2 className="text-gray-800 font-semibold text-xl lg:text-2xl mb-4">Custom Donation</h2>
         

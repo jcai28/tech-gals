@@ -4,7 +4,7 @@ const GirlCard = ({ girl }) => {
   let infoLines = [girl.age, girl.duration, girl.cover];
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md p-4 max-w-md mx-auto">
+    <div className="bg-white rounded-lg overflow-hidden p-4 max-w-md" style={{border: "1px solid #C2D1D9", marginBottom: "1rem"}}>
       <div className="flex justify-center mb-4">
         <div className="w-20 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 overflow-hidden rounded-full">
           <img className="object-cover w-full h-full" src={girl.img} alt="Profile" />
