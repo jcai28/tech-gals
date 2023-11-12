@@ -7,17 +7,19 @@ export default function NavBar() {
       gap: "1rem",
     },
     top: {
+      marginTop: "1rem",
       fontSize: 18,
+      position: "fixed",
     },
     item: {
       display: "flex",
-      gap: "1rem",
+      gap: ".6rem",
       alignItems: "center",
     },
     items: {
       display: "flex",
       flexDirection: "column",
-      gap: 33,
+      gap: 20,
       marginTop: 42,
     },
   };

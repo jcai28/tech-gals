@@ -22,13 +22,13 @@ export default function FundraisingCard() {
             backgroundColor: `${hex}`,
           }}
         />
-        <p>{text}</p>
+        <p style={{color: "#787486", fontSize:'16px'}}>{text}</p>
       </div>
     );
 
     return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>Organization Objectives</h1>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2rem" }}>
+        <h1 style={{fontSize: "18px", color: "#25348F", fontWeight: 'bold'}}>Organization Objectives</h1>
         <div style={{ display: "flex", gap: "3rem" }}>
           {line("Achieved", "#00C16A")}
           {line("Target", "#E2E8F0")}
@@ -40,7 +40,7 @@ export default function FundraisingCard() {
   const Middle = () => {
     const YearSelect = () => {
       return (
-        <div style={{ border: "1px solid grey", width: "fit-content", padding: "0 2px" }}>
+        <div style={{ border: "2px solid #EDEDED", width: "fit-content", padding: "0 2px"}}>
           <Form.Select aria-label="Default select example">
             <option value="1">2024</option>
             <option value="2">2023</option>
@@ -58,10 +58,10 @@ export default function FundraisingCard() {
     };
 
     return (
-      <div>
-        <p>$66,300 raised of $221,000* goal </p>
+      <div style={{color: "#64748B"}}>
+        <p><span style={{fontWeight: "700", fontSize: "20px"}}>$66,300</span> raised of $221,000* goal </p>
         <ProgressBar percentage={20} />
-        <div style={{display: "flex", gap: "1rem", justifyContent: "flex-end"}}>
+        <div style={{display: "flex", gap: "1rem", justifyContent: "flex-end", marginTop: "1rem"}}>
           <span>Year</span>
           <YearSelect />
         </div>
@@ -93,7 +93,7 @@ export default function FundraisingCard() {
     );
 
     return (
-      <div>
+      <div style={{color: "#64748B"}}>
         <h2 style={{ marginBottom: 20 }}>
           In 2024, we urgently need $221K+ for: 
         </h2>
@@ -104,7 +104,7 @@ export default function FundraisingCard() {
 
   const ViewMore = () => {
     return (
-      <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: 20, color: "#64748B"}}>
         <span>View more ⬇️</span>
       </div>
     );

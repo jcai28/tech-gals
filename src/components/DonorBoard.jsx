@@ -1,6 +1,5 @@
 import "./DonorBoard.css";
 import ProgressBar from "./ProgressBar";
-import Form from "react-bootstrap/Form";
 
 export default function DonorBoard() {
   const Top = () => {
@@ -22,13 +21,13 @@ export default function DonorBoard() {
             backgroundColor: `${hex}`,
           }}
         />
-        <p>{text}</p>
+        <p style={{color: "#787486", fontSize:'16px'}}>{text}</p>
       </div>
     );
 
     return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>Your Year To Date Impacts</h1>
+      <div style={{ display: "flex", justifyContent: "space-between",marginBottom: "2rem" }}>
+        <h1 style={{fontSize: "18px", color: "#25348F", fontWeight: 'bold'}}>Your Year To Date Impacts</h1>
         <div style={{ display: "flex", gap: "3rem" }}>
           {line("Achieved", "#00C16A")}
           {line("Milestone", "#E2E8F0")}
@@ -39,7 +38,7 @@ export default function DonorBoard() {
 
   const Middle = () => {
     return (
-      <div>
+      <div style={{color: "#64748B"}}>
         <ProgressBar percentage={20} />
         <div
           style={{ display: "flex", gap: "1rem", justifyContent: "flex-end" }}
@@ -67,7 +66,7 @@ export default function DonorBoard() {
     );
 
     return (
-      <div>
+      <div style={{color: "#64748B"}}>
         <h2 style={{ marginBottom: 20 }}>Next Milestone:</h2>
         <div style={{display: "flex", justifyContent: "space-between", alignItems: 'flex-start'}}>
           {line(
