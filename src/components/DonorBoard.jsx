@@ -130,12 +130,6 @@ export default function DonorBoard({ amount }) {
     );
   };
 
-  const Overlay = () => {
-    return (
-      <div style={{height: "10rem", width: "10rem", backgroundColor: "black", display: "none"}}/>
-    )
-  }
-
 
 const PopupWindow = ({isVisible, setIsVisible}) => {
     // State to manage the visibility of the pop-up
@@ -161,9 +155,11 @@ const PopupWindow = ({isVisible, setIsVisible}) => {
             borderRadius: '5px', // Rounded corners
             boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)' // Shadow for pop-up
         }}>
-            <h2>Pop-up Title</h2>
-            <p>This is the content of the pop-up.</p>
+          <div style={{display: "flex", justifyContent: "flex-end"}}>
+
             <button onClick={handleClose}>Close</button>
+          </div>
+            <img src={require('./share.png')}/>
         </div>
     );
 };
