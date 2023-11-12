@@ -46,7 +46,7 @@ export default function DonorBoard({amount}) {
         <div className="text-lg font-bold mt-2 " style={textPosition}>
           {`$${amount}`}
         </div>
-        <ProgressBar amount={amount} total={1200}/>
+        <ProgressBar amount={amount} total={2000}/>
         <div class="face-container">
           <div class="face1"><img src="group.png" alt="girl" /></div>
           <div class="face2"><img src="group.png" alt="girl"></img> </div>
