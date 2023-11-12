@@ -1,10 +1,12 @@
 .nav-bar {
-  height: 80%;
   border: 2px solid pink;
   height: 100%;
-  width: 30vw;
+  padding: 2rem;
   background: #F9F9F9;
   color: #878787;
+  display: flex;
+  flex-direction: column;
 }
+
 
 
